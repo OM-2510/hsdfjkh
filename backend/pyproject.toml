@@ -4,4 +4,6 @@ version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.162.0",
+    "pandas>=3.1.0",
+    "requests>=2.34.2",
 ]
