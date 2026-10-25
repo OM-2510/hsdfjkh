@@ -1,5 +1,5 @@
 import pandas as pd
-from .config import DEFAULT_CUTOFF
+from ..core.config import DEFAULT_CUTOFF
 from .cutoff import forecast_at_cutoff
 
 

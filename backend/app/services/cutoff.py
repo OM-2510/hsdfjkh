@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 import pandas as pd
-from .config import DEFAULT_CUTOFF, LONDON
+from ..core.config import DEFAULT_CUTOFF, LONDON
 
 
 def _london_to_utc(day, t: time) -> pd.Timestamp:

@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from .config import LONDON
+from ..core.config import LONDON
 
 
 def summary(df: pd.DataFrame) -> dict:

@@ -1,10 +1,9 @@
 import pandas as pd
 import pytest
 
-from app.analysis import build_comparison
-from app.metrics import summary
+from app.services.metrics import summary
+from app.services.analysis import build_comparison
 
-# errors: +10 (over-forecast) and -20 (under-forecast)
 DF = pd.DataFrame({"forecast_mw": [110, 80], "actual_mw": [100, 100],
                    "error_mw": [10, -20]})
 

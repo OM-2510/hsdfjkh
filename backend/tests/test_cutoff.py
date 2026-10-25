@@ -2,7 +2,7 @@ from datetime import time
 
 import pandas as pd
 
-from app.cutoff import cutoff_utc, forecast_at_cutoff
+from app.services.cutoff import cutoff_utc, forecast_at_cutoff
 
 TARGET = "2026-01-15 15:00"
 
