@@ -1,1 +1,22 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --chart-grid: #e2e8f0;
+  --chart-label: #475569;
+  --chart-tooltip: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+  --chart-grid: #334155;
+  --chart-label: #cbd5e1;
+  --chart-tooltip: #0f172a;
+}
+
+.dark .recharts-cartesian-axis-tick-value,
+.dark .recharts-legend-item-text {
+  fill: var(--chart-label);
+  color: var(--chart-label);
+}
