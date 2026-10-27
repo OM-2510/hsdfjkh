@@ -45,7 +45,7 @@ function MetricCards({ summary }) {
       {metrics.map((metric) => (
         <article key={metric.key} className="min-h-36 rounded-xl border border-slate-200 bg-white p-4 sm:p-5 dark:border-slate-700 dark:bg-slate-900">
           <h2 className="text-sm font-semibold text-slate-700 dark:text-slate-200">{metric.title}</h2>
-          <p className="mt-2 text-2xl font-bold tracking-tight text-slate-950">{metric.format(summary?.[metric.key])}</p>
+          <p className="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-slate-100">{metric.format(summary?.[metric.key])}</p>
           <p className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-300">{metric.hint}</p>
         </article>
       ))}

@@ -5,6 +5,7 @@ A small full-stack app that helps a day-ahead power buyer answer two questions a
 1. **What was the latest wind forecast available at the moment the buying decision had to be made?**
 2. **How accurate were those forecasts, in numbers, so a safety buffer can be sized?**
 
+**Deployed site:** [hsdfjkh.vercel.app](https://hsdfjkh.vercel.app/)
 
 ## The problem in one minute
 
