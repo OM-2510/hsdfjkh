@@ -42,7 +42,7 @@ The catch: the same hour is forecast many times, and some forecasts are publishe
 
 - **Time handling:** everything is stored and compared in UTC. The cutoff is defined in `Europe/London` and converted to UTC, so the logic stays correct in summer too. In January UK time equals UTC.
 
-- **Cached data:** Elexon data is fetched once by a script and committed to `data/`, so the app is fast and does not depend on Elexon being reachable.
+- **Cached data:** Elexon data is fetched once by a script and committed to `backend/data/`, so the app is fast and does not depend on Elexon being reachable.
 
 - **Metrics:** bias, MAE, RMSE, weighted percentage error, and the 90th percentile of error. Percentage error is weighted (total error / total wind) because ordinary MAPE blows up when wind is near zero.
 
@@ -62,6 +62,7 @@ The catch: the same hour is forecast many times, and some forecasts are publishe
 │   │       ├── cutoff.py      # "latest forecast before the deadline" logic
 │   │       ├── analysis.py    # Builds the forecast-vs-actual table
 │   │       └── metrics.py     # Error metrics and breakdowns
+│   ├── data/                  # Cached actuals and forecasts (CSV)
 │   ├── scripts/explore.py     # Data exploration script used during design
 │   ├── tests/                 # Unit and API tests
 │   ├── Dockerfile
@@ -75,7 +76,6 @@ The catch: the same hour is forecast many times, and some forecasts are publishe
 │   │   └── App.jsx
 │   ├── nginx.conf
 │   └── Dockerfile
-├── data/                      # Cached actuals and forecasts (CSV)
 └── docker-compose.yml
 ```
 

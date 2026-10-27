@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 BASE = "https://data.elexon.co.uk/bmrs/api/v1/datasets"
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
 
 def _get(dataset: str, params: dict) -> pd.DataFrame:
