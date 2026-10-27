@@ -19,14 +19,17 @@ function useFetch(url) {
 
   useEffect(() => {
     if (!url) {
-      setResult({ status: 'success', data: null, error: null })
-      return undefined
+      const timeoutId = setTimeout(() => {
+        setResult({ status: 'success', data: null, error: null })
+      }, 0)
+      
+      return () => clearTimeout(timeoutId)
     }
 
     const controller = new AbortController()
-    setResult({ status: 'loading', data: null, error: null })
 
     async function load() {
+      setResult({ status: 'loading', data: null, error: null })
       try {
         const response = await fetch(url, { signal: controller.signal })
         if (!response.ok) {

@@ -12,7 +12,8 @@ import { decisionUrl } from '../api.js'
 import { hhmm, mw, ymd } from '../format.js'
 import useFetch from '../hooks/useFetch.js'
 import Async from './Async.jsx'
-import { ControlPanel, CutoffControl, DateControl, isValidDay } from './Controls.jsx'
+import { ControlPanel, CutoffControl, DateControl } from './Controls.jsx'
+import { isValidDay } from '../constants.js'
 
 function DecisionView() {
   const [day, setDay] = useState('2026-01-15')

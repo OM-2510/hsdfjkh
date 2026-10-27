@@ -4,12 +4,13 @@ function Async({ status, error, retry, children, skeleton = 'chart', empty = nul
   const [waitingLong, setWaitingLong] = useState(false)
 
   useEffect(() => {
-    if (status !== 'loading') {
-      setWaitingLong(false)
-      return undefined
+    if(status === 'loading'){
+      const timer = window.setTimeout(() => setWaitingLong(true), 3000)
+      return () => {
+        setWaitingLong(false)
+        window.clearTimeout(timer)
+      }
     }
-    const timer = window.setTimeout(() => setWaitingLong(true), 3000)
-    return () => window.clearTimeout(timer)
   }, [status])
 
   if (status === 'loading') {
